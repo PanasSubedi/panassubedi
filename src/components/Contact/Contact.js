@@ -8,9 +8,15 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import Link from '@material-ui/core/Link';
+
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,8 +52,6 @@ function Education() {
 
         <Grid item xs="5">
 
-            <br /><br /><br />
-
             <Grid container spacing={3}>
               <Grid item>
                 <EmailIcon fontSize="small" />
@@ -76,10 +80,9 @@ function Education() {
             </Grid><br /><br /><br />
 
             <Grid container>
-              <Grid item>fb</Grid>
-              <Grid item>insta</Grid>
-              <Grid item>upwork</Grid>
-              <Grid item></Grid>
+              <Grid item><Link href="https://www.linkedin.com/in/panas-subedi-7a085ab1/" target={"_blank"}><LinkedInIcon /></Link></Grid>
+              <Grid item><Link href="https://www.facebook.com/crR0nUss/" target={"_blank"}><FacebookIcon /></Link></Grid>
+              <Grid item><Link href="https://www.instagram.com/psub3dii/" target={"_blank"}><InstagramIcon /></Link></Grid>
             </Grid>
 
         </Grid>
