@@ -73,7 +73,14 @@ function Education() {
               <Grid item>
                 <Typography>Sinamangal - 9<br />Kathmandu, Nepal</Typography>
               </Grid>
-            </Grid><br />
+            </Grid><br /><br /><br />
+
+            <Grid container>
+              <Grid item>fb</Grid>
+              <Grid item>insta</Grid>
+              <Grid item>upwork</Grid>
+              <Grid item></Grid>
+            </Grid>
 
         </Grid>
 

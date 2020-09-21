@@ -44,7 +44,7 @@ function TitleCard() {
         Panas Subedi
       </Typography>
       <Typography>
-        Programmer by Night
+        A Writer by Day
       </Typography>
     </>
   )

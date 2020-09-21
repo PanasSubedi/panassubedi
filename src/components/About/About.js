@@ -39,11 +39,18 @@ function About() {
     event.preventDefault()
   };
 
-  const aboutContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sem orci, mollis nec arcu vitae,
-  rutrum tristique mauris. Mauris tempor orci justo, sit amet consequat nunc bl
-  andit at. Duis blandit lectus vel justo blandit aliquet. Pellentesque non susc`
+  const aboutContent =
+    `I am a moderately experienced writer, working (within a specific timeslot
+    in the day) for LogPoint A/S. I also like working on (within other timeslots)
+    the content for blogs, technical documents, business proposals, and other
+    stuffs.`
 
-  const aboutContentExtra = `Sed sem orci, mollis nec arcu vitae, rutrum tristique mauris. Mauris tempor orci justo, sit amet consequat nunc blandit at. Duis blandit lectus vel justo blandit aliquet. Pellentesque non suscipit elit. Proin tincidunt est quis malesuada rhoncus. Vivamus eu eleifend elit. Curabitur eget ultricies erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur, ex at faucibus euismod, nunc turpis ornare ex, nec finibus dui nunc convallis lorem. Donec felis ligula, dignissim non ligula et, porttitor fringilla eli`
+  const aboutContentExtra =
+    `I am also a programming enthusiast. Therefore, when I am not writing stuffs,
+    I try to hone my skills in problem solving and full stack web development
+    (among other things). However, this happens only when I am not getting
+    distracted by fantasy books, ASOIAF forums, or video games like FIFA and
+    DotA.`
 
   return(
     <Container className={`${classes.root} ${classes.spaceTop}`} maxWidth="lg" id="about">
