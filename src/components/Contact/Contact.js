@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -17,6 +17,8 @@ import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
+import Snackbar from '@material-ui/core/Snackbar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +41,48 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Education() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const [snackBarOpen, setSnackBarOpen] = useState(false);
+  const [snackBarMessage, setSnackBarMessage] = useState('');
+
+  const handleButtonClick = () => {
+    fetch("https://api.panassubedi.com.np/contactSubmissions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message
+      })
+    }).then(
+      response => response.json()
+    ).then(
+      data => {
+        if ('success' in data && data['success']){
+          setSnackBarMessage('Message sent.');
+          setSnackBarOpen(true);
+        }
+
+        else {
+          setSnackBarMessage('Message failed to send. Please try again at a different time.')
+          setSnackBarOpen(true);
+        }
+      }
+    ).catch(err => {
+      setSnackBarMessage('Unknown error occured.');
+      setSnackBarOpen(true);
+    });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  }
 
   const classes = useStyles();
 
@@ -91,21 +135,50 @@ function Education() {
           <Typography variant="h6">Leave a message</Typography>
 
           <Box>
-          <TextField label="Your Name" fullWidth />
+            <TextField
+              label="Your name"
+              value={name}
+              onChange={event => {setName(event.target.value)}}
+              fullWidth
+            />
           </Box><br />
+
           <Box>
-          <TextField label="Email address" fullWidth />
+            <TextField
+              label="Email address"
+              value={email}
+              onChange={event => {setEmail(event.target.value)}}
+              fullWidth
+            />
           </Box><br />
+
           <Box>
-          <TextField label="Your Message" multiline fullWidth rows={5} />
+            <TextField
+              label="Your message"
+              value={message}
+              onChange={event => {setMessage(event.target.value)}}
+              fullWidth
+              multiline
+              rows={5}
+            />
           </Box><br />
+
           <Box>
-          <Button variant="outlined">Send</Button>
+            <Button
+              variant="outlined"
+              onClick={handleButtonClick}
+            >Send</Button>
           </Box>
 
         </Grid>
 
       </Grid>
+
+      <Snackbar
+        open={snackBarOpen}
+        onClose={() => setSnackBarOpen(false)}
+        message={snackBarMessage}
+      />
 
     </Container>
   )
