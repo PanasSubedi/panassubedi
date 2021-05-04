@@ -66,7 +66,7 @@ function Education() {
                 <PhoneAndroidIcon fontSize="small" />
               </Grid>
               <Grid item>
-                <Typography>+977 981 9796779</Typography>
+                <Typography>+977 981 8796779</Typography>
               </Grid>
             </Grid><br />
 
