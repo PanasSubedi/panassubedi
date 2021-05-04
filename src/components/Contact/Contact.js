@@ -94,7 +94,7 @@ function Education() {
 
       <Grid container className={classes.root} spacing={5}>
 
-        <Grid item xs="5">
+        <Grid item xs={5}>
 
             <Grid container spacing={3}>
               <Grid item>
@@ -131,7 +131,7 @@ function Education() {
 
         </Grid>
 
-        <Grid item xs="7">
+        <Grid item xs={7}>
           <Typography variant="h6">Leave a message</Typography>
 
           <Box>
