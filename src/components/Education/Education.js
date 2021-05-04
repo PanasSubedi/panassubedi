@@ -45,7 +45,7 @@ function Education() {
   const classes = useStyles();
 
   const printEducation = (title, issuedBy, date, url) => {
-    return <Paper elevation={0} className={classes.education}>
+    return <Paper key={title} elevation={0} className={classes.education}>
       <Typography variant='h6'>
         {title}
       </Typography>
@@ -70,7 +70,6 @@ function Education() {
       issuedBy: 'University of Northampton',
       date: 'Jul 2018',
       url: 'https://www.northampton.ac.uk/courses/computing-bsc-hons/'
-
     }
   ]
 
